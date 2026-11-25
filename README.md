@@ -1,5 +1,7 @@
 # Congruences modulo powers of 5 for broken 12-diamond partitions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24521408.svg)](https://doi.org/10.5281/zenodo.24521408)
+
 This repository holds the paper *Congruences modulo powers of 5 for broken 12-diamond partitions* by Ramanuja, together with code that recomputes its tables.
 
 Let Δ₁₂(n) be the number of broken 12-diamond partitions of n, and let r_α = (11·25^α + 13)/12. The paper proves the following, for all n ≥ 0:
@@ -39,6 +41,12 @@ python3 code/check_tables.py --qseries  # also numerical sanity checks (about 5 
 ```sh
 cd paper && pdflatex broken12_arxiv.tex && pdflatex broken12_arxiv.tex
 ```
+
+## Citation
+
+If you use this code, please cite the archived version:
+
+> Ramanuja, *Congruences modulo powers of 5 for broken 12-diamond partitions* (code and manuscript), Zenodo, 2026. https://doi.org/10.5281/zenodo.24521408
 
 ## Contact
 

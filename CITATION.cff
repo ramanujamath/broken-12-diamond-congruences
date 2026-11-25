@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Congruences modulo powers of 5 for broken 12-diamond partitions"
+authors:
+  - name: "Ramanuja"
+    email: "ramanujamath@yahoo.com"
+doi: "10.5281/zenodo.24521408"
+repository-code: "https://github.com/ramanujamath/broken-12-diamond-congruences"
+date-released: 2026-11-25
+keywords:
+  - partitions
+  - congruences
+  - modular forms
+  - eta quotients
