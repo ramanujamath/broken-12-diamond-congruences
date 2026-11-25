@@ -1,0 +1,706 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\pdfstringdefDisableCommands{\def\\{ }}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\newcommand{\Mod}{\mathscr{M}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Cb}{\overline{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\HH}{\mathbb{H}}
+
+\title{Congruences modulo powers of 5 for broken 12-diamond partitions}
+\author{Ramanuja\thanks{Email: \texttt{ramanujamath@yahoo.com}.}\\ Kachhubi, Lakhnaur Block, Madhubani District,\\ Bihar 847410, India}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $\Delta_{12}(n)$ denote the number of broken 12-diamond partitions of $n$, and let $r_\alpha=(11\cdot 25^\alpha+13)/12$. We prove that $\Delta_{12}(25^\alpha n+r_\alpha)\equiv 0 \pmod{5^\alpha}$ for all $\alpha\ge 1$ and $n\ge 0$. We also prove an internal congruence modulo $5^{\alpha+2}$ between consecutive progressions and a three-term congruence modulo $5^{\alpha+3}$. Modulo the next power of $5$, we determine these quantities explicitly as coefficients of eta quotients. As consequences, the first two families are sharp for every $\alpha$. In addition, for $\alpha=1$ the internal congruence holds modulo $5^4$ on four of the five residue classes of $n$ modulo $5$. Both eta quotients that govern the extraction factor through a Hauptmodul of $\Gamma_0(10)$. Hence every operator in the argument is determined by a known fifth-degree modular equation, and the remaining verification consists of a few integer computations recorded in tables.
+\end{abstract}
+
+\noindent\textbf{2020 Mathematics Subject Classification.} Primary 11P83; Secondary 05A17, 11F03.\\
+\textbf{Keywords.} Broken diamond partitions; partition congruences; eta quotients; modular equations; Ramanujan-type congruences.
+
+\section{Introduction}\label{sec:intro}
+
+Andrews and Paule~\cite{AP} introduced broken $k$-diamond partitions and showed that their generating functions are eta quotients. Throughout, $q$ is a formal variable or $q=e^{2\pi i\tau}$ with $\tau$ in the upper half-plane $\HH$, and
+\[
+f_d=f_d(q)=\prod_{m\ge1}(1-q^{dm})\qquad(d\ge1).
+\]
+For $k=12$, the number $\Delta_{12}(n)$ of broken 12-diamond partitions of $n$ has generating function~\cite{AP}
+\begin{equation}\label{eq:gf}
+F(q)=\sum_{n\ge0}\Delta_{12}(n)q^n=\frac{f_2f_{25}}{f_1^3f_{50}}.
+\end{equation}
+Tang~\cite[Theorem~1]{T1} proved, among other results, that $\Delta_{12}(25n+24)\equiv0\pmod5$. He later studied congruences modulo small powers of $5$ for $\Delta_{12}$ and proposed infinite families~\cite{T2}.
+
+For $\alpha\ge0$ put
+\[
+r_\alpha=\frac{11\cdot25^\alpha+13}{12},
+\]
+so that $r_0=2$, $r_1=24$, $r_2=574$, and $r_{\alpha+1}=r_\alpha+22\cdot25^\alpha$. For a prime $p$ and a nonzero rational number $a$, $v_p(a)$ denotes the exponent of $p$ in $a$, and $v_p(0)=+\infty$.
+
+\begin{theorem}\label{thm:main}
+For every $\alpha\ge1$ and $n\ge0$,
+\begin{align}
+\Delta_{12}(25^\alpha n+r_\alpha)&\equiv0\pmod{5^\alpha},\label{eq:c1}\\
+\Delta_{12}(25^{\alpha+1}n+r_{\alpha+1})+5\Delta_{12}(25^\alpha n+r_\alpha)&\equiv0\pmod{5^{\alpha+2}}.\label{eq:c2}
+\end{align}
+\end{theorem}
+
+\begin{theorem}\label{thm:second}
+For every $\alpha\ge2$ and $n\ge0$,
+\begin{equation}\label{eq:c3}
+\Delta_{12}(25^{\alpha+1}n+r_{\alpha+1})+5\Delta_{12}(25^\alpha n+r_\alpha)-125\,\Delta_{12}(25^{\alpha-1}n+r_{\alpha-1})\equiv0\pmod{5^{\alpha+3}}.
+\end{equation}
+\end{theorem}
+
+Define integers $c(n)$ and $d(n)$ by
+\begin{equation}\label{eq:cd}
+\sum_{n\ge0}c(n)q^n=\frac{f_2^3f_5^2f_{10}}{f_1^4},\qquad\sum_{n\ge0}d(n)q^n=\frac{f_2^8}{f_1^2}.
+\end{equation}
+
+\begin{theorem}\label{thm:next}
+Let $n\ge0$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item For $\alpha\ge1$,
+\[
+\Delta_{12}(25^\alpha n+r_\alpha)\equiv2(-1)^{\alpha-1}5^\alpha c(n)\pmod{5^{\alpha+1}}.
+\]
+\item If $n\not\equiv2\pmod5$, then
+\[
+\Delta_{12}(625n+574)+5\Delta_{12}(25n+24)\equiv0\pmod{5^4}.
+\]
+Moreover,
+\[
+\Delta_{12}(3125n+1824)+5\Delta_{12}(125n+74)\equiv125\,d(n)\pmod{5^4}.
+\]
+\item For $\alpha\ge2$,
+\[
+\Delta_{12}(25^{\alpha+1}n+r_{\alpha+1})+5\Delta_{12}(25^\alpha n+r_\alpha)\equiv2(-1)^\alpha5^{\alpha+2}c(n)\pmod{5^{\alpha+3}}.
+\]
+\end{enumerate}
+\end{theorem}
+
+For $\alpha=1$, part~(a) refines Tang's congruence to $\Delta_{12}(25n+24)\equiv10\,c(n)\pmod{25}$. Part~(b) shows that for $\alpha=1$ the internal congruence~\eqref{eq:c2} holds modulo $5^{\alpha+3}$ on four of the five residue classes of $n$ modulo $5$. Since $2c(n)\equiv2,3,2,1,1\pmod5$ for $n=0,1,2,3,4$, part~(c) shows that this does not happen for any $\alpha\ge2$.
+
+\begin{corollary}\label{cor:sharp}
+Let $\alpha\ge1$ and $n\ge0$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $\Delta_{12}(25^\alpha n+r_\alpha)\equiv(-5)^{\alpha-1}\Delta_{12}(25n+24)\pmod{5^{\alpha+1}}$. Moreover, $5^{\alpha+1}$ divides $\Delta_{12}(25^\alpha n+r_\alpha)$ if and only if $5\mid c(n)$. This condition does not depend on $\alpha$.
+\item $v_5(\Delta_{12}(r_\alpha))=\alpha$. Hence the modulus in~\eqref{eq:c1} cannot be replaced by $5^{\alpha+1}$ for any $\alpha$.
+\item $v_5\bigl(\Delta_{12}(r_{\alpha+1})+5\Delta_{12}(r_\alpha)\bigr)=\alpha+2$ for $\alpha\ge2$, and $v_5\bigl(\Delta_{12}(1824)+5\Delta_{12}(74)\bigr)=3$. Hence the modulus in~\eqref{eq:c2} cannot be replaced by $5^{\alpha+3}$ for any $\alpha$.
+\end{enumerate}
+\end{corollary}
+
+\subsection*{Method}
+We follow the approach of Watson~\cite{W} and Paule and Radu~\cite{PR}. The progression series are generated by iterating a single operator $C=U_{25}(Z\,\cdot)$, where $Z=\eta(25\tau)^2/\eta(\tau)^2$ (Section~\ref{sec:recursion}). The key observation (Section~\ref{sec:level10}) is that $Z$ and the initial eta quotient $W$ both factor as a rational function of $y(\tau)$ times a rational function of $y(5\tau)$. Here $y$ is the Hauptmodul of $\Gamma_0(10)$ used by Smoot~\cite{S}. Consequently the operator $U_5$ is needed only on rational functions of $y$, and there it is determined by the fifth-degree modular equation for $y$ (Theorem~\ref{thm:modeq}). This equation is taken from~\cite{S}. The only other modular identities needed are four relations among eta quotients on $\Gamma_0(10)$, each of which follows from the valence formula after comparing two coefficients.
+
+The $5$-adic analysis (Sections~\ref{sec:contraction}--\ref{sec:next}) proceeds as follows. Two linear lower bounds for $5$-adic valuations are proved by induction from the visible valuations of the modular equation. They settle all but finitely many cases. The remaining cases are explicit integers, listed in Appendix~\ref{app:tables}. These integers are small enough to be checked by hand.
+
+\section{Notation and preliminaries}\label{sec:prelim}
+
+\subsection{Formal power series}
+For a ring $R$, $R[[q]]$ denotes formal power series in $q$. For $g=\sum_ng_nq^n$ we write $[q^n]g=g_n$, and similarly $[y^k]$ for coefficients of power series in a variable $y$. For an integer $m\ge1$ define the operator
+\[
+U_m\Bigl(\sum_{n}g_nq^n\Bigr)=\sum_ng_{mn}q^n.
+\]
+It satisfies the \emph{pull-out identity}
+\begin{equation}\label{eq:pullout}
+U_m\bigl(g(q^m)h(q)\bigr)=g(q)\,U_m\bigl(h(q)\bigr),
+\end{equation}
+and $U_mU_{m'}=U_{mm'}$. A series in $1+q\Z[[q]]$ is a unit of $\Z[[q]]$. In particular, $f_d$ and $f_d^{-1}$ lie in $1+q\Z[[q]]$. Hence, for $\varphi\in\Z[[q]]$ and $u\in1+q\Z[[q]]$, all coefficients of $u\varphi$ are divisible by $5^m$ if and only if all coefficients of $\varphi$ are. For $u,v\in\Z[[q]]$ we write $u\equiv v\pmod{5^m}$ if all coefficients of $u-v$ are divisible by $5^m$. We shall often use
+\begin{equation}\label{eq:frob}
+f_1^5\equiv f_5,\qquad f_2^5\equiv f_{10}\pmod5,
+\end{equation}
+which follow from $(1-X)^5\equiv1-X^5\pmod5$.
+
+We write $\Z_5$ for the ring of $5$-adic integers, $\F_5=\Z/5\Z$, $\lfloor\cdot\rfloor$ and $\lceil\cdot\rceil$ for the floor and ceiling functions, and
+\[
+w(j)=\Bigl\lfloor\frac j5\Bigr\rfloor\qquad(j\ge0).
+\]
+
+\subsection{Modular functions and eta quotients}
+Let $\Gamma_0(N)=\{\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)\in\mathrm{SL}_2(\Z):N\mid c\}$, acting on $\HH$ by M\"obius transformations, and let $X_0(N)$ be the compactified quotient. A \emph{modular function on $\Gamma_0(N)$} is a meromorphic function on $\HH$ invariant under $\Gamma_0(N)$ that is meromorphic at every cusp. Its order $\ord_sf$ at a cusp $s$ is measured in the local uniformizer at $s$. At the cusp $\infty$ this uniformizer is $q$.
+
+\begin{lemma}[Valence formula]\label{lem:valence}
+Let $f$ be a nonzero modular function on $\Gamma_0(N)$ that is holomorphic on $\HH$. Then $\sum_s\ord_sf\le0$, where the sum is over the cusps of $X_0(N)$.
+\end{lemma}
+
+This follows from the fact that a nonzero meromorphic function on the compact Riemann surface $X_0(N)$ has as many zeros as poles; see, for example,~\cite[Chapter~4]{Ra}.
+
+Let $\eta(\tau)=q^{1/24}f_1(q)$ be the Dedekind eta function. An \emph{eta quotient} of level $N$ is a function $\prod_{d\mid N}\eta(d\tau)^{r_d}$ with $r_d\in\Z$. Eta quotients are holomorphic and nonvanishing on $\HH$.
+
+\begin{lemma}[Ligozat~\cite{Lig}]\label{lem:ligozat}
+Let $g=\prod_{d\mid N}\eta(d\tau)^{r_d}$. Suppose that $\sum_dr_d=0$, $\sum_ddr_d\equiv0\pmod{24}$, $\sum_d(N/d)r_d\equiv0\pmod{24}$, and $\prod_dd^{r_d}$ is the square of a rational number. Then $g$ is a modular function on $\Gamma_0(N)$. Its order at a cusp $a/c$ with $c\mid N$ and $\gcd(a,c)=1$ is
+\begin{equation}\label{eq:ordformula}
+\ord_{a/c}g=\frac{N}{24\gcd(c^2,N)}\sum_{d\mid N}\frac{r_d\gcd(c,d)^2}{d},
+\end{equation}
+and this depends only on $c$.
+\end{lemma}
+
+\section{Reduction to an operator recursion}\label{sec:recursion}
+
+For $\alpha\ge1$ define the progression series and their normalizations
+\[
+H_\alpha(q)=\sum_{n\ge0}\Delta_{12}(25^\alpha n+r_\alpha)q^n,\qquad L_\alpha(q)=qf_1^2H_\alpha(q).
+\]
+Define the eta quotients
+\begin{equation}\label{eq:ZW}
+Z=\frac{\eta(25\tau)^2}{\eta(\tau)^2}=q^2\frac{f_{25}^2}{f_1^2},\qquad
+W=\frac{\eta(2\tau)\eta(25\tau)^3}{\eta(\tau)^3\eta(50\tau)}=q\frac{f_2f_{25}^3}{f_1^3f_{50}}=qf_{25}^2F,
+\end{equation}
+and the operators
+\begin{equation}\label{eq:ABC}
+A(g)=U_5(Zg),\qquad B(g)=U_5(g),\qquad C(g)=B(A(g))=U_{25}(Zg).
+\end{equation}
+
+\begin{lemma}\label{lem:Lrec}
+$L_1=U_{25}(W)$, and $L_{\alpha+1}=C(L_\alpha)$ for $\alpha\ge1$.
+\end{lemma}
+
+\begin{proof}
+By~\eqref{eq:pullout} with $m=25$,
+\[
+U_{25}(W)=U_{25}\bigl(f_{25}^2\cdot qF\bigr)=f_1^2\sum_{n\ge1}\Delta_{12}(25n-1)q^n=qf_1^2\sum_{n\ge0}\Delta_{12}(25n+24)q^n=L_1.
+\]
+For $H=\sum_nh_nq^n\in\Z[[q]]$ put $TH=\sum_nh_{25n+22}q^n$. Then
+\[
+C(qf_1^2H)=U_{25}\bigl(q^3f_{25}^2H\bigr)=f_1^2\sum_{n\ge1}h_{25n-3}q^n=qf_1^2\,TH.
+\]
+Since $r_{\alpha+1}=r_\alpha+22\cdot25^\alpha$, we have $TH_\alpha=H_{\alpha+1}$, and the second identity follows.
+\end{proof}
+
+\section{Level-10 functions}\label{sec:level10}
+
+Define the following eta quotients of level $10$:
+\begin{gather*}
+y=\frac{\eta(2\tau)\eta(10\tau)^3}{\eta(\tau)^3\eta(5\tau)},\qquad
+x=\frac{\eta(2\tau)^5\eta(5\tau)}{\eta(\tau)^5\eta(10\tau)},\qquad
+g=\frac{\eta(\tau)\eta(5\tau)^3}{\eta(2\tau)^3\eta(10\tau)},\\
+h=\frac{\eta(10\tau)^8}{\eta(\tau)^2\eta(5\tau)^6},\qquad
+\kappa=\frac{\eta(\tau)^6\eta(5\tau)^2}{\eta(2\tau)^8}.
+\end{gather*}
+Each satisfies the hypotheses of Lemma~\ref{lem:ligozat} with $N=10$. For instance, for $y$ we have $r_1=-3$, $r_2=1$, $r_5=-1$, $r_{10}=3$, $\sum dr_d=24$, $\sum(10/d)r_d=-24$ and $\prod d^{r_d}=400$. All five are therefore modular functions on $\Gamma_0(10)$. In terms of $q$,
+\[
+y=q\frac{f_2f_{10}^3}{f_1^3f_5},\quad x=\frac{f_2^5f_5}{f_1^5f_{10}},\quad g=\frac{f_1f_5^3}{f_2^3f_{10}},\quad h=q^2\frac{f_{10}^8}{f_1^2f_5^6},\quad \kappa=\frac{f_1^6f_5^2}{f_2^8},
+\]
+and in particular all five lie in $\Z[[q]]$, with
+\begin{equation}\label{eq:expansions}
+\begin{gathered}
+y=q+3q^2+O(q^3),\quad x=1+5q+O(q^2),\quad g=1-q+O(q^2),\\
+h=q^2+2q^3+O(q^4),\quad \kappa=1-6q+O(q^2).
+\end{gathered}
+\end{equation}
+The curve $X_0(10)$ has four cusps, represented by $0,1/2,1/5,\infty$. Formula~\eqref{eq:ordformula} gives the orders in Table~\ref{tab:cusps}. In particular, $y$ has a single simple pole, at the cusp $0$, so it is a Hauptmodul for $\Gamma_0(10)$.
+
+\begin{table}[ht]
+\centering
+\caption{Orders at the cusps of $X_0(10)$.}\label{tab:cusps}
+\begin{tabular}{lcccc}
+\toprule
+Cusp & $0$ & $1/2$ & $1/5$ & $\infty$\\
+\midrule
+$y$ & $-1$ & $0$ & $0$ & $1$\\
+$x$ & $-1$ & $1$ & $0$ & $0$\\
+$g$ & $0$ & $-1$ & $1$ & $0$\\
+$h$ & $-1$ & $0$ & $-1$ & $2$\\
+$\kappa$ & $1$ & $-2$ & $1$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{lemma}\label{lem:ids}
+The following identities hold:
+\[
+x=1+5y,\qquad g=\frac{1+4y}{x},\qquad h=\frac{y^2}{1+4y},\qquad \kappa=\frac{1+4y}{x^2}.
+\]
+\end{lemma}
+
+\begin{proof}
+By Table~\ref{tab:cusps}, each of the functions $x$, $gx$, $y^2/h$ and $\kappa x^2$ has nonnegative order at $1/2$, $1/5$ and $\infty$, and order at least $-1$ at $0$. The same holds for $1+5y$ and $1+4y$. Hence each of the differences
+\[
+x-(1+5y),\quad gx-(1+4y),\quad y^2/h-(1+4y),\quad \kappa x^2-(1+4y)
+\]
+is a modular function on $\Gamma_0(10)$, holomorphic on $\HH$, with order at least $-1$ at $0$ and nonnegative order at $1/2$ and $1/5$. By~\eqref{eq:expansions}, each difference is $O(q^2)$, so its order at $\infty$ is at least $2$. The sum of its orders at the cusps is therefore at least $1$. By Lemma~\ref{lem:valence}, each difference vanishes identically.
+\end{proof}
+
+\begin{corollary}\label{cor:factor}
+$Z(\tau)=h(\tau)\,\kappa(5\tau)$ and $W(\tau)=y(\tau)\,g(5\tau)$.
+\end{corollary}
+
+\begin{proof}
+Compare exponents:
+\begin{align*}
+h(\tau)\kappa(5\tau)&=\frac{\eta(10\tau)^{8}}{\eta(\tau)^{2}\eta(5\tau)^{6}}\cdot\frac{\eta(5\tau)^{6}\eta(25\tau)^{2}}{\eta(10\tau)^{8}}=Z(\tau),\\
+y(\tau)g(5\tau)&=\frac{\eta(2\tau)\eta(10\tau)^3}{\eta(\tau)^{3}\eta(5\tau)}\cdot\frac{\eta(5\tau)\eta(25\tau)^3}{\eta(10\tau)^{3}\eta(50\tau)}=W(\tau).\qedhere
+\end{align*}
+\end{proof}
+
+\section{The modular equation and the operator \texorpdfstring{$U_5$}{U5}}\label{sec:U5}
+
+Define polynomials $e_1,\dots,e_5\in\Z[t]$ by
+\begin{align*}
+e_1(t)&=205t+4300t^2+34000t^3+120000t^4+160000t^5,\\
+e_2(t)&=-215t-4475t^2-35000t^3-122000t^4-160000t^5,\\
+e_3(t)&=85t+1750t^2+13525t^3+46500t^4+60000t^5,\\
+e_4(t)&=-15t-305t^2-2325t^3-7875t^4-10000t^5,\\
+e_5(t)&=t+20t^2+150t^3+500t^4+625t^5=t(1+5t)^4,
+\end{align*}
+and put
+\begin{equation}\label{eq:Q}
+Q(Y;t)=Y^5-e_1(t)Y^4+e_2(t)Y^3-e_3(t)Y^2+e_4(t)Y-e_5(t)\in\Z[t][Y].
+\end{equation}
+
+\begin{theorem}[Smoot~{\cite[Theorem~2.4]{S}}]\label{thm:modeq}
+$Q\bigl(y(\tau);y(5\tau)\bigr)=0$.
+\end{theorem}
+
+In~\cite{S} the coefficients are written in factored form, for example
+\[
+e_1(t)=5\cdot41\,t+5^2\cdot172\,t^2+5^3\cdot272\,t^3+5^4\cdot192\,t^4+5^4\cdot256\,t^5,
+\]
+and they agree with the polynomials above. Alternatively, Theorem~\ref{thm:modeq} can be checked directly. The left side is a modular function on $\Gamma_0(50)$, holomorphic on $\HH$, with total pole order at most $45$ at the cusps. By Lemma~\ref{lem:valence}, it therefore suffices to verify that its $q$-expansion vanishes through $q^{45}$.
+
+For $0\le a\le4$ put
+\[
+Y_a=y\Bigl(\frac{\tau+a}{5}\Bigr).
+\]
+Replacing $\tau$ by $(\tau+a)/5$ in Theorem~\ref{thm:modeq} and using $y(\tau+a)=y(\tau)$ shows that $Q(Y_a;y)=0$, where $y=y(\tau)$. The functions $Y_0,\dots,Y_4$ are distinct, because $Y_a=\zeta_5^aq^{1/5}+\cdots$ with $\zeta_5=e^{2\pi i/5}$ and $q^{1/5}=e^{2\pi i\tau/5}$. Hence they are the five roots of $Q(Y;y)$, and $e_\ell(y)$ is the $\ell$-th elementary symmetric function of $Y_0,\dots,Y_4$. If $f$ is a meromorphic function on $\HH$ with a $q$-expansion in integral powers of $q$, then $U_5f(\tau)=\frac15\sum_{a=0}^4f\bigl(\frac{\tau+a}5\bigr)$. In particular, for every rational function $R\in\Q(t)$,
+\begin{equation}\label{eq:U5R}
+U_5\bigl(R(y)\bigr)=\frac15\sum_{a=0}^4R(Y_a).
+\end{equation}
+
+\begin{lemma}\label{lem:norms}
+$\prod_{a=0}^4(1+5Y_a)=x^5$ and $\prod_{a=0}^4(1+4Y_a)=1+4y$. Equivalently,
+\[
+1+\sum_{\ell=1}^55^\ell e_\ell(t)=(1+5t)^5,\qquad 1+\sum_{\ell=1}^54^\ell e_\ell(t)=1+4t.
+\]
+\end{lemma}
+
+\begin{proof}
+For any constant $\gamma$, $\prod_a(1+\gamma Y_a)=1+\sum_\ell \gamma^\ell e_\ell(y)$, and $x=1+5y$ by Lemma~\ref{lem:ids}. The two polynomial identities are checked coefficientwise. For example, for $\gamma=4$ the coefficients of $t$ and $t^2$ are $4\cdot205-16\cdot215+64\cdot85-256\cdot15+1024=4$ and $4\cdot4300-16\cdot4475+64\cdot1750-256\cdot305+1024\cdot20=0$.
+\end{proof}
+
+Set
+\begin{equation}\label{eq:V4}
+V(Y;t)=\frac{1+4t+1024\,Q(Y;t)}{1+4Y}=\sum_{i=0}^4v_i(t)Y^i.
+\end{equation}
+By Lemma~\ref{lem:norms}, $1024\,Q(-1/4;t)=-(1+4t)$, so the numerator vanishes at $Y=-1/4$. Since its leading coefficient is $1024=4^5$, the quotient lies in $\Z[t][Y]$. The polynomials $v_i$ are listed in Appendix~\ref{app:poly}. Since $Q(Y_a;y)=0$,
+\begin{equation}\label{eq:inv}
+\frac{1}{1+4Y_a}=\frac{V(Y_a;y)}{1+4y}\qquad(0\le a\le4).
+\end{equation}
+
+\begin{proposition}\label{prop:AB}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item For $j\ge0$, let $b_j=B(y^j)$. Then $b_j\in\Z[y]$, $b_0=1$, $\deg b_j\le5j$, and $b_j\in y^{\lceil j/5\rceil}\Z[y]$. Moreover, $5b_j=\sum_aY_a^j$. In particular $b_1=e_1(y)/5$.
+\item For $j\ge0$ there is $a_j\in\Z[y]$ with $A(y^j)=a_j(y)/x^2$. Explicitly, if $Y^{j+2}V(Y;y)\equiv\sum_{i=0}^4\rho_{i}(y)Y^i\pmod{Q(Y;y)}$ with $\rho_i\in\Z[y]$, then $a_j=\sum_{i=0}^4\rho_i\,b_i$. Moreover, $A(y^j)\in q^{\lceil(j+2)/5\rceil}\Z[[q]]$.
+\item The sequences $(b_j)$ and $(a_j)$ both satisfy the recurrence
+\begin{equation}\label{eq:rec}
+T_j=\sum_{\ell=1}^5(-1)^{\ell+1}e_\ell(y)\,T_{j-\ell}\qquad(j\ge5).
+\end{equation}
+\item $U_5(W)=s(y)/x$, where
+\[
+s(y)=(1+4y)\,b_1=41y+1024y^2+10240y^3+51200y^4+128000y^5+128000y^6.
+\]
+Consequently $L_1=B(s/x)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) By~\eqref{eq:U5R}, $5b_j=\sum_aY_a^j$ is the $j$-th power sum of the roots of $Q(Y;y)$. By Newton's identities it is a polynomial in $e_1(y),\dots,e_5(y)$ with integer coefficients, and induction on $j$ gives $\deg b_j\le5j$. Thus $b_j\in\Q[y]$. Since $y\in q+q^2\Z[[q]]$, a polynomial in $y$ with rational coefficients whose $q$-expansion is integral has integer coefficients. The $q$-expansion of $b_j=U_5(y^j)$ is integral, so $b_j\in\Z[y]$. Finally $y^j\in q^j\Z[[q]]$, so $b_j\in q^{\lceil j/5\rceil}\Z[[q]]$, which gives $b_j\in y^{\lceil j/5\rceil}\Z[y]$.
+
+(b) By Corollary~\ref{cor:factor},~\eqref{eq:pullout}, Lemma~\ref{lem:ids},~\eqref{eq:U5R} and~\eqref{eq:inv},
+\[
+A(y^j)=U_5\bigl(\kappa(5\tau)h(\tau)y^j\bigr)=\kappa\,U_5\Bigl(\frac{y^{j+2}}{1+4y}\Bigr)=\frac{1+4y}{x^2}\cdot\frac15\sum_a\frac{Y_a^{j+2}}{1+4Y_a}=\frac1{x^2}\cdot\frac15\sum_aY_a^{j+2}V(Y_a;y).
+\]
+Reducing modulo $Q$ and using (a), the last average equals $\sum_i\rho_ib_i\in\Z[y]$. Since $Zy^j\in q^{j+2}\Z[[q]]$, we get $A(y^j)\in q^{\lceil(j+2)/5\rceil}\Z[[q]]$.
+
+(c) Multiply $Y_a^5=\sum_\ell(-1)^{\ell+1}e_\ell(y)Y_a^{5-\ell}$ by $Y_a^{j-5}$, or by $Z\bigl(\frac{\tau+a}5\bigr)Y_a^{j-5}$, and average over $a$. This gives~\eqref{eq:rec} for $b_j$ and for $A(y^j)=x^{-2}a_j$, respectively.
+
+(d) By Corollary~\ref{cor:factor},~\eqref{eq:pullout} and Lemma~\ref{lem:ids}, $U_5(W)=g\,U_5(y)=(1+4y)b_1/x$. Then $L_1=U_{25}(W)=B(U_5(W))$ by Lemma~\ref{lem:Lrec}.
+\end{proof}
+
+The polynomials $b_1,\dots,b_4$ and $a_0,\dots,a_4$ are listed in Appendix~\ref{app:poly}. By~\eqref{eq:rec}, they determine all $b_j$ and $a_j$.
+
+\section{A weighted module and a contraction}\label{sec:contraction}
+
+Since $y\in q+q^2\Z[[q]]$, every $\varphi\in\Z_5[[q]]$ has a unique expansion $\varphi=\sum_{k\ge0}\varphi_ky^k$ with $\varphi_k\in\Z_5$. We use this identification of $\Z_5[[q]]$ with $\Z_5[[y]]$ throughout. Under it, divisibility of all $q$-coefficients by $5^m$ is equivalent to divisibility of all $y$-coefficients by $5^m$.
+
+\begin{definition}
+Let
+\[
+\Mod=\Bigl\{\sum_{k\ge0}\varphi_ky^k\in\Z_5[[y]]:\ v_5(\varphi_k)\ge w(k)\text{ for all }k\Bigr\}.
+\]
+\end{definition}
+
+$\Mod$ is a $\Z_5$-module. Multiplication by $x^{-m}=(1+5y)^{-m}$ preserves $\Mod$ for every $m\ge0$, because the coefficient of $y^s$ in $x^{-m}$ is divisible by $5^s$ and $w(k)-w(k-s)\le s$.
+
+We use the coefficients
+\[
+b_i=\sum_k\beta_{k,i}\,y^k,\qquad A(y^j)=\sum_i\alpha_{i,j}\,y^i,\qquad C(y^j)=\sum_kc_{k,j}\,y^k,
+\]
+all of which are integers. Put $i_0(j)=\lceil(j+2)/5\rceil$. By Proposition~\ref{prop:AB}, $\alpha_{i,j}=0$ for $i<i_0(j)$, $\beta_{k,i}=0$ for $i>5k$, and $\beta_{0,i}=0$ for $i\ge1$. The operators $A$, $B$ and $C$ are continuous for the $q$-adic topology, so $C(y^j)=B(A(y^j))=\sum_i\alpha_{i,j}b_i$, and hence
+\begin{equation}\label{eq:ckj}
+c_{0,j}=0,\qquad c_{k,j}=\sum_{i=i_0(j)}^{5k}\alpha_{i,j}\,\beta_{k,i}\qquad(k\ge1).
+\end{equation}
+In particular $c_{k,j}=0$ whenever $i_0(j)>5k$.
+
+\begin{lemma}\label{lem:e}
+$v_5([t^k]e_\ell)\ge\lceil(5k-\ell)/6\rceil$ for $1\le\ell\le5$ and $1\le k\le5$.
+\end{lemma}
+
+\begin{proof}
+Inspect the $25$ coefficients. For example, the coefficients of $e_1$ have $5$-adic valuations $1,2,3,4,4$, and the required lower bounds are $1,2,3,4,4$. For $e_5$ the valuations are $0,1,2,3,4$ and the bounds are $0,1,2,3,4$.
+\end{proof}
+
+\begin{lemma}\label{lem:linear}
+For all $i,j\ge0$,
+\[
+v_5([y^i]b_j)\ge\Bigl\lfloor\frac{5i-j-1}6\Bigr\rfloor,\qquad
+v_5([y^i]a_j)\ge\Bigl\lfloor\frac{5i-j-7}6\Bigr\rfloor,\qquad
+v_5(\alpha_{i,j})\ge\Bigl\lfloor\frac{5i-j-7}6\Bigr\rfloor.
+\]
+\end{lemma}
+
+\begin{proof}
+For $0\le j\le4$, the first two bounds are verified on the polynomials in Appendix~\ref{app:poly}. Let $j\ge5$ and let $T_j$ denote $b_j$ or $a_j$, with $\gamma=-1$ or $\gamma=-7$, respectively. By~\eqref{eq:rec}, $[y^i]T_j$ is a sum of terms $\pm[y^k]e_\ell\cdot[y^{i-k}]T_{j-\ell}$ with $1\le\ell,k\le5$. By Lemma~\ref{lem:e} and induction, such a term has valuation at least
+\[
+\Bigl\lceil\frac{5k-\ell}6\Bigr\rceil+\Bigl\lfloor\frac{5(i-k)-(j-\ell)+\gamma}6\Bigr\rfloor\ge\Bigl\lfloor\frac{5i-j+\gamma}6\Bigr\rfloor.
+\]
+For the third bound, $\alpha_{i,j}=\sum_{s\ge0}(s+1)(-5)^s[y^{i-s}]a_j$. Each term has valuation at least $s+\lfloor(5(i-s)-j-7)/6\rfloor\ge\lfloor(5i-j-7)/6\rfloor$.
+\end{proof}
+
+For $k\ge1$, $j\ge0$ and $i\ge i_0(j)$, put
+\[
+\theta(i,j)=\begin{cases}\min\bigl(v_5(\alpha_{i,j}),6\bigr)&\text{if }j\le4\text{ and }i\le9,\\[2pt] \lfloor(5i-j-7)/6\rfloor&\text{otherwise},\end{cases}
+\qquad
+G(k,j)=\min_{i_0(j)\le i\le5k}\Bigl(\theta(i,j)+\Bigl\lfloor\frac{5k-i-1}6\Bigr\rfloor\Bigr),
+\]
+with $G(k,j)=+\infty$ if $i_0(j)>5k$. For $j\le4$ and $i\le9$, the values $\theta(i,j)$ are read off from Table~\ref{tab:alpha}. By~\eqref{eq:ckj} and Lemma~\ref{lem:linear},
+\begin{equation}\label{eq:G}
+v_5(c_{k,j})\ge G(k,j).
+\end{equation}
+
+\begin{lemma}\label{lem:G}
+Let $k\ge1$ and $j\ge0$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $G(k,j)\ge1+w(k)-w(j)$, unless $k=1$ and $1\le j\le9$.
+\item $G(k,j)\ge2+w(k)-w(j)$, unless $(k,j)$ lies in the set
+\[
+\mathcal{R}=\{(1,j):0\le j\le14\}\cup\{(1,19),(2,1),(2,2),\dots,(2,9),(2,14),(3,3),(3,4),(3,9)\}.
+\]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Since $\theta(i,j)\ge\lfloor(5i-j-7)/6\rfloor$ for all $j$ (when $j\le4$ and $i\le9$ this uses Lemma~\ref{lem:linear} and $\lfloor(5i-j-7)/6\rfloor\le6$), using $\lfloor u\rfloor\ge u-5/6$ for $u\in\frac16\Z$ and $i\ge(j+2)/5$ gives
+\[
+G(k,j)\ge\frac{5i-j-12}6+\frac{5k-i-6}6=\frac{4i+5k-j-18}{6}\ge\frac{25k-j-82}{30}.
+\]
+On the other hand $1+w(k)-w(j)\le(9+k-j)/5$, so $G(k,j)-(1+w(k)-w(j))\ge(19k+5j-136)/30$. Since $G(k,j)$ and $w(k)-w(j)$ are integers, (a) holds whenever $19k+5j>106$, and (b) whenever $19k+5j>136$. The finitely many pairs with $19k+5j\le136$ are checked by evaluating $G(k,j)$ directly.
+\end{proof}
+
+\begin{proposition}\label{prop:contract}
+For all $k\ge1$ and $j\ge0$, $v_5(c_{k,j})\ge1+w(k)-w(j)$. Consequently $C(\Mod)\subseteq5\Mod$.
+\end{proposition}
+
+\begin{proof}
+By~\eqref{eq:G} and Lemma~\ref{lem:G}(a), only the pairs $(1,j)$ with $1\le j\le9$ remain. For $5\le j\le9$ the required bound is $0$. For $1\le j\le4$, Table~\ref{tab:c} shows that $c_{1,1},\dots,c_{1,4}$ are divisible by $5$.
+
+Now let $\varphi=\sum_j\varphi_jy^j\in\Mod$. Since $C(y^j)\in q^{\lceil(j+2)/25\rceil}\Z[[q]]$, only finitely many $j$ contribute to each coefficient $[y^k]C(\varphi)=\sum_j\varphi_jc_{k,j}$. Each contribution has valuation at least $w(j)+1+w(k)-w(j)=1+w(k)$. Hence $C(\varphi)\in5\Mod$.
+\end{proof}
+
+\subsection*{The reduced operator}
+For $\varphi=\sum_k\varphi_ky^k\in\Mod$, define its \emph{reduction} $\rho(\varphi)=(\rho_k(\varphi))_{k\ge0}\in\prod_{k\ge0}\F_5$ by
+\[
+\rho_k(\varphi)=\varphi_k/5^{w(k)}\bmod5.
+\]
+Then $\varphi\in5\Mod$ if and only if $\rho(\varphi)=0$. Two simple facts will be used repeatedly. First, since $5^{w(k)}\mid\varphi_k$ and $w(k)\ge1$ for $k\ge5$,
+\begin{equation}\label{eq:reduce}
+\varphi\equiv\sum_{k=0}^4\rho_k(\varphi)\,y^k\pmod5\qquad(\varphi\in\Mod\cap\Z[[q]]).
+\end{equation}
+Second, by Proposition~\ref{prop:contract} the integers $\hat c_{k,j}=c_{k,j}/5^{1+w(k)-w(j)}$ are well defined. For $\varphi\in\Mod$,
+\begin{equation}\label{eq:Cbar}
+\rho\bigl(C(\varphi)/5\bigr)=\Cb\rho(\varphi),\qquad\text{where}\qquad(\Cb u)_k=\sum_{j}(\hat c_{k,j}\bmod5)\,u_j.
+\end{equation}
+The sum is finite for each $k$. By~\eqref{eq:G} and Lemma~\ref{lem:G}(b),
+\begin{equation}\label{eq:support}
+\hat c_{k,j}\not\equiv0\pmod5\quad\Longrightarrow\quad(k,j)\in\mathcal{R}.
+\end{equation}
+
+\section{The internal congruence}\label{sec:internal}
+
+Write
+\[
+L_1=\sum_{k\ge1}\ell_ky^k,\qquad\frac{s(y)}{x}=\sum_{i\ge1}\sigma_iy^i.
+\]
+By Proposition~\ref{prop:AB}(d), $\ell_k=\sum_{i=1}^{5k}\sigma_i\beta_{k,i}$. Since $\deg s=6$, we have $\sigma_i=(-5)^{i-6}\sigma_6$ for $i\ge6$. The valuations of $\sigma_1,\dots,\sigma_6$ are $0,0,1,2,4,3$ (Table~\ref{tab:sigma}). Hence $v_5(\sigma_i)\ge\max(0,i-3)$ for all $i$. Put
+\[
+\Lambda(k)=\min_{1\le i\le5k}\Bigl(v_5(\sigma_i)+\Bigl\lfloor\frac{5k-i-1}6\Bigr\rfloor\Bigr),
+\]
+so that $v_5(\ell_k)\ge\Lambda(k)$ by Lemma~\ref{lem:linear}. Direct evaluation gives $\Lambda(1),\dots,\Lambda(8)=0,1,2,2,3,4,5,6$, and in general $\Lambda(k)\ge(5k-9)/6$.
+
+\begin{lemma}\label{lem:L1}
+$L_1\in5\Mod$, and $\rho(L_1/5)=\lambda$, where $\lambda_1=2$, $\lambda_2=3$ and $\lambda_k=0$ for $k\ne1,2$.
+\end{lemma}
+
+\begin{proof}
+For $k\ge4$ we have $(5k-9)/6>1+k/5$, so $\Lambda(k)\ge2+w(k)$. Also $\Lambda(3)=2=2+w(3)$ and $\Lambda(2)=1$. It remains to determine $\ell_1$ and $\ell_2$ modulo $25$. By Table~\ref{tab:L1}, $\ell_1\equiv585$ and $\ell_2\equiv4890\pmod{5^6}$. In fact $\ell_1=[q^1]L_1=\Delta_{12}(24)=656835$. Thus $\ell_1/5\equiv2$ and $\ell_2/5\equiv3\pmod5$.
+\end{proof}
+
+\begin{proposition}\label{prop:D}
+$D:=(L_2+5L_1)/125$ lies in $\Mod$.
+\end{proposition}
+
+\begin{proof}
+Write $L_1=5\ell$ with $\ell\in\Mod$. Then $L_2+5L_1=C(L_1)+5L_1=25\bigl(C(\ell)/5+\ell\bigr)$, so we must show that $C(\ell)/5+\ell\in5\Mod$. By~\eqref{eq:Cbar} this means $\Cb\lambda=-\lambda$. By~\eqref{eq:support}, the only pairs $(k,j)\in\mathcal{R}$ with $j\in\{1,2\}$ are $(1,1),(1,2),(2,1),(2,2)$, so $(\Cb\lambda)_k=0$ for $k\ge3$. By Table~\ref{tab:c},
+\[
+\begin{pmatrix}\hat c_{1,1}&\hat c_{1,2}\\ \hat c_{2,1}&\hat c_{2,2}\end{pmatrix}\equiv\begin{pmatrix}3&4\\2&1\end{pmatrix}\pmod5,
+\qquad\text{and}\qquad
+\begin{pmatrix}3&4\\2&1\end{pmatrix}\begin{pmatrix}2\\3\end{pmatrix}=\begin{pmatrix}18\\7\end{pmatrix}\equiv-\begin{pmatrix}2\\3\end{pmatrix}\pmod5.\qedhere
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Lemma~\ref{lem:Lrec}, $L_\alpha=C^{\alpha-1}(L_1)$. By Lemma~\ref{lem:L1} and Proposition~\ref{prop:contract}, $L_\alpha\in5^\alpha\Mod$. By Proposition~\ref{prop:D},
+\[
+L_{\alpha+1}+5L_\alpha=C^{\alpha-1}(L_2+5L_1)=125\,C^{\alpha-1}(D)\in5^{\alpha+2}\Mod.
+\]
+Elements of $5^m\Mod$ have all $q$-coefficients divisible by $5^m$. Since $L_\alpha=qf_1^2H_\alpha$ and $f_1^2$ is a unit in $\Z[[q]]$, this gives~\eqref{eq:c1} and~\eqref{eq:c2}.
+\end{proof}
+
+\section{The three-term congruence}\label{sec:second}
+
+\begin{lemma}\label{lem:delta}
+$\rho(D)=\delta$, where $\delta_3=1$, $\delta_4=4$, $\delta_5=2$, and $\delta_k=0$ for all other $k$.
+\end{lemma}
+
+\begin{proof}
+Write $D=\sum_kD_ky^k$. Then $125D_k=\sum_{j\ge1}\ell_jc_{k,j}+5\ell_k$, and $\delta_k$ depends only on $125D_k$ modulo $5^{4+w(k)}$. We use
+\[
+v_5(\ell_j)\ge\Lambda'(j):=\max\bigl(\Lambda(j),1+w(j)\bigr),\qquad v_5(c_{k,j})\ge G'(k,j):=\max\bigl(G(k,j),1+w(k)-w(j)\bigr).
+\]
+If $j\ge8$, then $\Lambda'(j)+G'(k,j)\ge(5j-9)/6+1+w(k)-j/5\ge4+w(k)$. If $j\le7$ and $k\ge10$, the estimate in the proof of Lemma~\ref{lem:G} gives $1+G(k,j)\ge1+(25k-89)/30\ge4+w(k)$. For the remaining pairs with $j\le7$ and $k\le9$, direct evaluation shows that $\Lambda'(j)+G'(k,j)<4+w(k)$ exactly for
+\[
+(k,j)\in\{(1,1),\dots,(1,5),\,(2,1),\dots,(2,5),\,(3,1),\dots,(3,4),\,(4,1),(4,2),\,(5,1),(5,2)\}.
+\]
+Similarly, $1+\Lambda'(k)\ge4+w(k)$ for $k\ge6$. Hence $\delta_k=0$ for $k\ge6$. For $k\le5$, Tables~\ref{tab:c} and~\ref{tab:L1} give
+\[
+125D_k\equiv0,\ 0,\ 125,\ 500,\ 1250\pmod{5^{4+w(k)}}\qquad(k=1,\dots,5),
+\]
+which is the stated value of $\delta$.
+\end{proof}
+
+\begin{proposition}\label{prop:CD}
+$C(D)-L_1\in25\Mod$.
+\end{proposition}
+
+\begin{proof}
+Since $C(D)/5\in\Mod$ and $L_1/5\in\Mod$, the claim is equivalent to $\rho(C(D)/5)=\rho(L_1/5)$, that is, $\Cb\delta=\lambda$, by~\eqref{eq:Cbar} and Lemma~\ref{lem:L1}. By~\eqref{eq:support}, the pairs of $\mathcal{R}$ with $j\in\{3,4,5\}$ are $(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,3),(3,4)$. By Table~\ref{tab:c}, the corresponding residues $\hat c_{k,j}\bmod5$ are $2,0,0,1,3,0,2,2$. Hence
+\[
+(\Cb\delta)_1=2\cdot1=2,\qquad(\Cb\delta)_2=1\cdot1+3\cdot4\equiv3,\qquad(\Cb\delta)_3=2\cdot1+2\cdot4\equiv0,
+\]
+and $(\Cb\delta)_k=0$ for $k\ge4$. This is $\lambda$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:second}]
+Let $\alpha\ge2$. By Lemma~\ref{lem:Lrec}, $L_{\alpha+1}+5L_\alpha=125\,C^{\alpha-1}(D)$ and $L_{\alpha-1}=C^{\alpha-2}(L_1)$. Hence, by Propositions~\ref{prop:contract} and~\ref{prop:CD},
+\[
+L_{\alpha+1}+5L_\alpha-125L_{\alpha-1}=125\,C^{\alpha-2}\bigl(C(D)-L_1\bigr)\in125\cdot5^{\alpha-2}\cdot25\,\Mod=5^{\alpha+3}\Mod.
+\]
+Dividing by the unit $f_1^2$ gives~\eqref{eq:c3}.
+\end{proof}
+
+\section{Residues modulo the next power of 5}\label{sec:next}
+
+By Lemma~\ref{lem:ids} and the $q$-expansions in Section~\ref{sec:level10},
+\begin{equation}\label{eq:etaforms}
+y=q\frac{f_2f_{10}^3}{f_1^3f_5},\qquad 1+4y=gx=\frac{f_2^2f_5^4}{f_1^4f_{10}^2}.
+\end{equation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:next}]
+(a) We have $L_\alpha/5^\alpha=C(L_{\alpha-1}/5^{\alpha-1})/5$ with $L_{\alpha-1}/5^{\alpha-1}\in\Mod$. By~\eqref{eq:Cbar} and induction, $\rho(L_\alpha/5^\alpha)=\Cb^{\alpha-1}\lambda=(-1)^{\alpha-1}\lambda$, using $\Cb\lambda=-\lambda$ from the proof of Proposition~\ref{prop:D}. By~\eqref{eq:reduce},~\eqref{eq:etaforms} and~\eqref{eq:frob}, and since $2y+3y^2\equiv2y(1+4y)\pmod5$,
+\[
+\frac{L_\alpha}{5^\alpha}\equiv2(-1)^{\alpha-1}y(1+4y)=2(-1)^{\alpha-1}q\frac{f_2^3f_5^3f_{10}}{f_1^7}\pmod5.
+\]
+Dividing by $qf_1^2$ gives
+\[
+\frac{H_\alpha}{5^\alpha}\equiv2(-1)^{\alpha-1}\frac{f_2^3f_5^3f_{10}}{f_1^9}\equiv2(-1)^{\alpha-1}\frac{f_2^3f_5^2f_{10}}{f_1^4}\pmod5.
+\]
+
+(b) By Proposition~\ref{prop:D}, Lemma~\ref{lem:delta} and~\eqref{eq:reduce}, $D\equiv y^3+4y^4=y^3(1+4y)\pmod5$. Write $D=qf_1^2\,\Phi$ with $\Phi=(H_2+5H_1)/125\in\Z[[q]]$. By~\eqref{eq:etaforms} and~\eqref{eq:frob},
+\[
+\Phi\equiv\frac{y^3(1+4y)}{qf_1^2}=q^2\frac{f_2^5f_5f_{10}^7}{f_1^{15}}\equiv q^2\frac{f_{10}^8}{f_5^2}\pmod5.
+\]
+Thus $[q^n]\Phi\equiv0\pmod5$ unless $n\equiv2\pmod5$, and $[q^{5m+2}]\Phi\equiv d(m)\pmod5$. Since $[q^n]\Phi=\bigl(\Delta_{12}(625n+574)+5\Delta_{12}(25n+24)\bigr)/125$, and $625(5m+2)+574=3125m+1824$ and $25(5m+2)+24=125m+74$, this proves~(b).
+
+(c) By Theorem~\ref{thm:second}, $(H_{\alpha+1}+5H_\alpha)/5^{\alpha+2}\equiv H_{\alpha-1}/5^{\alpha-1}\pmod5$. Now apply~(a) with $\alpha-1$ in place of $\alpha$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:sharp}]
+(a) We argue by induction on $\alpha$ using~\eqref{eq:c2}. If $H_\alpha\equiv(-5)^{\alpha-1}H_1$ modulo $5^{\alpha+1}$, then $H_{\alpha+1}\equiv-5H_\alpha\equiv(-5)^\alpha H_1$ modulo $5^{\alpha+2}$. The divisibility criterion follows from Theorem~\ref{thm:next}(a).
+
+(b) Take $n=0$ in~(a). Since $\Delta_{12}(24)=656835=5\cdot131367$ and $5\nmid131367$, we get $v_5(\Delta_{12}(r_\alpha))=\alpha$.
+
+(c) For $\alpha\ge2$, take $n=0$ in Theorem~\ref{thm:next}(c). Since $c(0)=1$, the valuation is exactly $\alpha+2$. For $\alpha=1$, take $n=0$ in the second congruence of Theorem~\ref{thm:next}(b). Since $d(0)=1$, $v_5\bigl(\Delta_{12}(1824)+5\Delta_{12}(74)\bigr)=3$.
+\end{proof}
+
+\section{Concluding remarks}\label{sec:remarks}
+
+\begin{remark}
+Combining~\eqref{eq:c3} with an induction as in Corollary~\ref{cor:sharp}(a) shows that, for every $\alpha\ge1$,
+\[
+H_\alpha\equiv u_\alpha H_2+u'_\alpha H_1\pmod{5^{\alpha+2}},
+\]
+where both integer sequences satisfy $u_{\alpha+1}=-5u_\alpha+125u_{\alpha-1}$, with $(u_1,u'_1)=(0,1)$ and $(u_2,u'_2)=(1,0)$. For instance, $H_3\equiv-5H_2+125H_1\pmod{5^5}$.
+\end{remark}
+
+\begin{remark}
+The only input from the literature beyond standard facts on modular functions is Theorem~\ref{thm:modeq}. All other steps use the valence formula on $X_0(10)$ with two coefficients (Lemma~\ref{lem:ids}), polynomial arithmetic in $\Z[y]$, and the integers in Appendix~\ref{app:tables}. Every entry of Tables~\ref{tab:beta}--\ref{tab:L1} is obtained from the polynomials in Appendix~\ref{app:poly} by~\eqref{eq:rec},~\eqref{eq:ckj} and Proposition~\ref{prop:AB}(d). Only arithmetic modulo $5^6$ is needed.
+\end{remark}
+
+\appendix
+\section{Tables}\label{app:tables}
+
+\subsection{Polynomials}\label{app:poly}
+The polynomials $b_j=B(y^j)$ and $a_j=x^2A(y^j)$ of Proposition~\ref{prop:AB}. Coefficient vectors are listed starting from the coefficient of $y^1$; all constant terms vanish.
+
+{\small\raggedright
+\begin{description}[leftmargin=2.5em,style=nextline]
+\item[$b_{1}$:] $(41,\allowbreak\ 860,\allowbreak\ 6800,\allowbreak\ 24000,\allowbreak\ 32000)$
+\item[$b_{2}$:] $(86,\allowbreak\ 10195,\allowbreak\ 366600,\allowbreak\ 6534800,\allowbreak\ 68384000,\allowbreak\ 450720000,\allowbreak\ 1907200000,\allowbreak\ 5056000000,\allowbreak\ 7680000000,\allowbreak\ 5120000000)$
+\item[$b_{3}$:] $(51,\allowbreak\ 27495,\allowbreak\ 2836265,\allowbreak\ 128688900,\allowbreak\ 3343692000,\allowbreak\ 56283680000,\allowbreak\ 656205600000,\allowbreak\ 5502096000000,\allowbreak\ 33821312000000,\allowbreak\ 153192960000000,\allowbreak\ 506956800000000,\allowbreak\ 1195008000000000,\allowbreak\ 1904640000000000,\allowbreak\ 1843200000000000,\allowbreak\ 819200000000000)$
+\item[$b_{4}$:] $(12,\allowbreak\ 32674,\allowbreak\ 8579260,\allowbreak\ 831492275,\allowbreak\ 42958434000,\allowbreak\ 1396773180000,\allowbreak\ 31314949600000,\allowbreak\ 511802288800000,\allowbreak\ 6319880448000000,\allowbreak\ 60349364480000000,\allowbreak\ 452174745600000000,\allowbreak\ 2679038592000000000,\allowbreak\ 12574269440000000000,\allowbreak\ 46561935360000000000,\allowbreak\ 134544588800000000000,\allowbreak\ 297365504000000000000,\allowbreak\ 485949440000000000000,\allowbreak\ 553779200000000000000,\allowbreak\ 393216000000000000000,\allowbreak\ 131072000000000000000)$
+\item[$a_{0}$:] $(10,\allowbreak\ 255,\allowbreak\ 2560,\allowbreak\ 12800,\allowbreak\ 32000,\allowbreak\ 32000)$
+\item[$a_{1}$:] $(19,\allowbreak\ 2571,\allowbreak\ 101205,\allowbreak\ 1997100,\allowbreak\ 23622800,\allowbreak\ 181056000,\allowbreak\ 927520000,\allowbreak\ 3171200000,\allowbreak\ 6976000000,\allowbreak\ 8960000000,\allowbreak\ 5120000000)$
+\item[$a_{2}$:] $(8,\allowbreak\ 6282,\allowbreak\ 711260,\allowbreak\ 34509215,\allowbreak\ 958706200,\allowbreak\ 17369348000,\allowbreak\ 220103200000,\allowbreak\ 2030936800000,\allowbreak\ 13955680000000,\allowbreak\ 72117312000000,\allowbreak\ 279930880000000,\allowbreak\ 805708800000000,\allowbreak\ 1671168000000000,\allowbreak\ 2365440000000000,\allowbreak\ 2048000000000000,\allowbreak\ 819200000000000)$
+\item[$a_{3}$:] $(1,\allowbreak\ 6610,\allowbreak\ 1999674,\allowbreak\ 207825025,\allowbreak\ 11331424225,\allowbreak\ 387809392000,\allowbreak\ 9170484780000,\allowbreak\ 158757787600000,\allowbreak\ 2088283480800000,\allowbreak\ 21389192240000000,\allowbreak\ 173323068160000000,\allowbreak\ 1121732966400000000,\allowbreak\ 5822188160000000000,\allowbreak\ 24214161920000000000,\allowbreak\ 80197570560000000000,\allowbreak\ 208885760000000000000,\allowbreak\ 418852864000000000000,\allowbreak\ 624394240000000000000,\allowbreak\ 652083200000000000000,\allowbreak\ 425984000000000000000,\allowbreak\ 131072000000000000000)$
+\item[$a_{4}$:] $(0,\allowbreak\ 3691,\allowbreak\ 3004464,\allowbreak\ 633201325,\allowbreak\ 62634968100,\allowbreak\ 3678589002625,\allowbreak\ 144942003730000,\allowbreak\ 4121800136700000,\allowbreak\ 88714557528800000,\allowbreak\ 1492996740820000000,\allowbreak\ 20103457048960000000,\allowbreak\ 220179269318400000000,\allowbreak\ 1984450462720000000000,\allowbreak\ 14835607625600000000000,\allowbreak\ 92441150044160000000000,\allowbreak\ 481068044800000000000000,\allowbreak\ 2089517420544000000000000,\allowbreak\ 7548671856640000000000000,\allowbreak\ 22529815347200000000000000,\allowbreak\ 54957899776000000000000000,\allowbreak\ 107804884992000000000000000,\allowbreak\ 165973196800000000000000000,\allowbreak\ 193200128000000000000000000,\allowbreak\ 159907840000000000000000000,\allowbreak\ 83886080000000000000000000,\allowbreak\ 20971520000000000000000000)$
+\end{description}
+\noindent The polynomials $v_i(t)$ in \eqref{eq:V4}, listed starting from the constant term:
+\begin{description}[leftmargin=2.5em,style=nextline]
+\item[$v_{0}$:] $(1,\ -1020,\ -20480,\ -153600,\ -512000,\ -640000)$
+\item[$v_{1}$:] $(-4,\ -11280,\ -230400,\ -1766400,\ -6016000,\ -7680000)$
+\item[$v_{2}$:] $(16,\ -41920,\ -870400,\ -6784000,\ -23552000,\ -30720000)$
+\item[$v_{3}$:] $(-64,\ -52480,\ -1100800,\ -8704000,\ -30720000,\ -40960000)$
+\item[$v_{4}$:] $(256)$
+\end{description}
+}
+
+\subsection{Residues modulo $5^6$}
+
+\begin{table}[H]
+\centering\small
+\caption{$\beta_{k,i}=[y^k]b_i \bmod 5^6$ (a dash means $\beta_{k,i}=0$).}\label{tab:beta}
+\begin{tabular}{r|rrrrr}
+$i$ & $k=1$ & $k=2$ & $k=3$ & $k=4$ & $k=5$\\\hline
+1 & 41 & 860 & 6800 & 8375 & 750 \\
+2 & 86 & 10195 & 7225 & 3550 & 9000 \\
+3 & 51 & 11870 & 8140 & 1400 & 4500 \\
+4 & 12 & 1424 & 1135 & 7900 & 12125 \\
+5 & 1 & 5745 & 10175 & 11500 & 625 \\
+6 & -- & 8451 & 8420 & 8800 & 6500 \\
+7 & -- & 2086 & 7165 & 4600 & 10975 \\
+8 & -- & 316 & 6955 & 12985 & 13925 \\
+9 & -- & 27 & 7249 & 9690 & 1775 \\
+10 & -- & 1 & 8315 & 6425 & 10000 \\
+11 & -- & -- & 10111 & 430 & 15000 \\
+12 & -- & -- & 9336 & 12335 & 15075 \\
+13 & -- & -- & 806 & 4640 & 7730 \\
+14 & -- & -- & 42 & 8474 & 12545 \\
+15 & -- & -- & 1 & 10460 & 0 \\
+16 & -- & -- & -- & 9146 & 11015 \\
+17 & -- & -- & -- & 9586 & 14705 \\
+18 & -- & -- & -- & 1521 & 14300 \\
+19 & -- & -- & -- & 57 & 4224 \\
+20 & -- & -- & -- & 1 & 4305 \\
+21 & -- & -- & -- & -- & 13431 \\
+22 & -- & -- & -- & -- & 6211 \\
+23 & -- & -- & -- & -- & 2461 \\
+24 & -- & -- & -- & -- & 72 \\
+25 & -- & -- & -- & -- & 1 \\
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{$\alpha_{i,j}=[y^i]A(y^j)\bmod5^6$ for $1\le i\le9$. All entries with $10\le i\le25$ are $\equiv0$ modulo $5^6$.}\label{tab:alpha}
+\begin{tabular}{r|rrrrrrrrr}
+$j\backslash i$ & 1&2&3&4&5&6&7&8&9\\\hline
+0 & 10 & 155 & 760 & 1325 & 15375 & 1375 & 8125 & 9375 & 0 \\
+1 & 19 & 2381 & 14420 & 12125 & 425 & 14250 & 7500 & 3125 & 0 \\
+2 & 8 & 6202 & 8415 & 4390 & 14425 & 250 & 8750 & 3125 & 0 \\
+3 & 1 & 6600 & 11774 & 11035 & 3900 & 14625 & 5000 & 12500 & 3125 \\
+4 & 0 & 3691 & 14429 & 11635 & 6650 & 4625 & 1875 & 3125 & 3125 \\
+5 & 0 & 1190 & 13165 & 5920 & 5075 & 12875 & 6875 & 3125 & 0 \\
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{$\sigma_i=[y^i](s/x)\bmod 5^6$; $\sigma_i\equiv0$ for $i\ge9$.}\label{tab:sigma}
+\begin{tabular}{rrrrrrrrr}
+1&2&3&4&5&6&7&8&9\\\hline
+41 & 819 & 6145 & 4850 & 10000 & 15500 & 625 & 12500 & 0 \\
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{$c_{k,j}\bmod 5^6$ and $v_5(c_{k,j})$.}\label{tab:c}
+\begin{tabular}{rrr@{\qquad}rrr@{\qquad}rrr}
+$(k,j)$ & $c_{k,j}$ & $v_5$ & $(k,j)$ & $c_{k,j}$ & $v_5$ & $(k,j)$ & $c_{k,j}$ & $v_5$\\\hline
+$(1,1)$ & 8765 & 1 & $(2,2)$ & 4305 & 1 & $(3,3)$ & 635 & 1 \\
+$(1,2)$ & 14345 & 1 & $(2,3)$ & 6080 & 1 & $(3,4)$ & 3385 & 1 \\
+$(1,3)$ & 7560 & 1 & $(2,4)$ & 9090 & 1 & $(4,1)$ & 15300 & 2 \\
+$(1,4)$ & 12075 & 2 & $(2,5)$ & 12555 & 1 & $(4,2)$ & 8600 & 2 \\
+$(1,5)$ & 6120 & 1 & $(3,1)$ & 3850 & 2 & $(5,1)$ & 5125 & 3 \\
+$(2,1)$ & 4160 & 1 & $(3,2)$ & 11475 & 2 & $(5,2)$ & 14000 & 3 \\
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{$\ell_k=[y^k]L_1\bmod 5^6$ and $v_5(\ell_k)$.}\label{tab:L1}
+\begin{tabular}{rrrrrr}
+$k$ & 1&2&3&4&5\\\hline
+$\ell_k\bmod5^6$ & 585 & 4890 & 6125 & 6325 & 1125 \\
+$v_5(\ell_k)$ & 1 & 1 & 3 & 2 & 3 \\
+\end{tabular}
+\end{table}
+
+
+\section*{Data availability}
+All data used in this article are contained in the article.
+
+\begin{thebibliography}{99}
+\bibitem{AP} G. E. Andrews and P. Paule, MacMahon's partition analysis XI: Broken diamonds and modular forms, \emph{Acta Arith.} \textbf{126} (2007), 281--294.
+\bibitem{Lig} G. Ligozat, \emph{Courbes modulaires de genre 1}, M\'em. Soc. Math. France \textbf{43} (1975).
+\bibitem{PR} P. Paule and C.-S. Radu, The Andrews--Sellers family of partition congruences, \emph{Adv. Math.} \textbf{230} (2012), 819--838.
+\bibitem{Ra} R. A. Rankin, \emph{Modular Forms and Functions}, Cambridge University Press, 1977.
+\bibitem{S} N. A. Smoot, A single-variable proof of the omega SPT congruence family over powers of 5, \emph{Ramanujan J.} \textbf{62} (2023), 1--45. \url{https://doi.org/10.1007/s11139-023-00747-9}.
+\bibitem{T1} D. Tang, New congruences for broken $k$-diamond partitions, \emph{J. Integer Seq.} \textbf{21} (2018), Article 18.5.8.
+\bibitem{T2} D. Tang, Congruence properties modulo powers of 5 for broken 12-diamond partitions, \emph{J. Ramanujan Math. Soc.} \textbf{39} (2024), 281--292.
+\bibitem{W} G. N. Watson, Ramanujans Vermutung \"uber Zerf\"allungsanzahlen, \emph{J. Reine Angew. Math.} \textbf{179} (1938), 97--128.
+\end{thebibliography}
+
+\end{document}
